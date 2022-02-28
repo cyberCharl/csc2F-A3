@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.*;
 import java.nio.file.*;
 
@@ -10,7 +11,6 @@ class TestHashTable
    void run ( int threshold )
    {
       HashTable h = new HashTable ();
-      
       int hit1=0, miss1=0, hit2=0, miss2=0;
       List<String> lines = null;
       List<String> linesmiss = null;
@@ -26,14 +26,13 @@ class TestHashTable
       {
          h.insert (lines.get (i));
       }
-      
-      for ( int i=0; i<lines.size (); i++ )
-      {
-         if (h.find (lines.get(i)))
-            hit1++;
-         else
-            miss1++;
-      }
+
+     for ( int i=0; i<lines.size (); i++ ) {
+        if (h.find(lines.get(i)))
+           hit1++;
+        else
+           miss1++;
+     }
 
       for ( int i=0; i<linesmiss.size (); i++ )
       {
@@ -42,18 +41,24 @@ class TestHashTable
          else
             miss2++;
       }
-      
+
       System.out.println ("Collision Threshold: " + threshold);
-      if (h.getCollisions () <= threshold)
-         System.out.println ("Collisions Threshold Met!");
-      else   
+      if (h.getCollisions () <= threshold) {
+         System.out.println("Collisions Threshold Met!");
+         //System.out.println(w.toString());
+         //System.exit(0);
+      }
+      else   {
          System.out.println ("Collisions Threshold Not Met! Collisions = " + h.getCollisions ());
       System.out.println ("Seen data [Hit:Miss]: " + hit1 + ":" + miss1);
       System.out.println ("Unseen data [Hit:Miss]: " + hit2 + ":" + miss2);
+      //System.out.println(w.toString());
+      }
    }
 
    public static void main ( String [] args )
    {
-      (new TestHashTable ()).run(Integer.valueOf (args[0]));
+      (new TestHashTable ()).run(0);
    }
 }
+//

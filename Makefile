@@ -3,11 +3,11 @@ JAVAC=/usr/bin/javac
 SRCDIR=src
 BINDIR=bin
 $(BINDIR)/%.class:$(SRCDIR)/%.java
-$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
-CLASSES=HashFunction.class HashTable.class TestHashTable.class
+	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
+CLASSES=HashTableFunctions.class HashTable.class TestHashTable.class#add classes
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 default: $(CLASS_FILES)
 clean:
-rm $(BINDIR)/*.class
+	rm $(BINDIR)/*.class
 run: $(CLASS_FILES)
-java -cp bin TestHashTable
+# fix this run - java -cp bin TestHashTable
