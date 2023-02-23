@@ -10,4 +10,6 @@ default: $(CLASS_FILES)
 clean:
 	rm $(BINDIR)/*.class
 run: $(CLASS_FILES)
-# fix this run - java -cp bin TestHashTable
+	java -cp bin TestHashTable
+getWeight:
+	java -cp bin Weights

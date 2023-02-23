@@ -1,11 +1,11 @@
-# csc2F-A3
+# CSC2001F Assignment 3
+## Hash tables
 
-Assignment 3 for csc2F.
-Hash tables
 
-```
-CSC2001F 2021 Assignment 3
-Instructions
+
+
+**Instructions**
+
 The goal of this assignment is to write a perfect hash function for a set of simple textual data.
 
 The dataset provided is 36 student IDs stored in the names36.txt file.
@@ -27,4 +27,3 @@ Begin by studying the skeleton program provided and first write the find functio
 TestHashTable takes a single command-line argument that is the threshold to test for; this threshold is the number of collision-related additional comparisons performed in the insert function.  Your goal in designing your hash function is to minimise this value, ideally reaching a value of 0 (thus indicating a perfect hash function).  The marking script will test your program with decreasing values of this threshold.  The key part of finding the solution is finding the correct weights - there are about 2 million combinations (5^9) and only about 10 will give you a perfect hash function.  Write a piece of code to check every option! 
 
 Submit your solution as a ZIP file to the Automatic Marker.  You only need to submit the HashTableFunctions.java file (not within a directory).  This assignment is automatically-marked but you should still document your code.  There is no requirement for a Makefile, javadocs output, git or a report.  A tutor may, however, check your code if you try to gain the marks without meeting the requirements of the question
-```
